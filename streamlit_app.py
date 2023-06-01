@@ -1,13 +1,18 @@
 import time
 import streamlit as st
 import bittensor as bt
-from bokeh.plotting import figure
+import matplotlib.pyplot as plt
+import numpy as np
+import queue
 
 st.title("Bittensor: Finney")
 st.divider()
 
 # Streamlit loop.
 placeholder = st.empty()
+
+# Metagraph history.
+history = queue.Queue( 10 )
 
 for i in range(100):
     with placeholder.container():
@@ -18,13 +23,10 @@ for i in range(100):
         block_metric = col3.metric( label="Unique Hotkeys", value=str(len(set(metagraph.hotkeys))) )
         block_metric = col4.metric( label="Unique Coldkeys", value=str(len(set(metagraph.coldkeys))) )
         block_metric = col1.metric( label="Unique Endpoints", value=str(len(set([a.ip for a in metagraph.axons]))) )
-        time.sleep( 6 )
 
-        x = [1, 2, 3, 4, 5]
-        y = [6, 7, 2, 4, 5]
-        p = figure(
-            title='simple line example',
-            x_axis_label='x',
-            y_axis_label='y')
-        p.line(x, y, legend_label='Trend', line_width=2)
-        st.bokeh_chart(p, use_container_width=True)
+        arr = np.random.normal(1, 1, size=100)
+        fig, ax = plt.subplots()
+        ax.hist(arr, bins=20)
+        st.pyplot( fig )
+
+        time.sleep( 6 )
