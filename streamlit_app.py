@@ -3,11 +3,6 @@ import streamlit as st
 import bittensor as bt
 
 st.title("Bittensor: Finney")
-st.set_page_config(
-    page_title="Opentensor Dashboard",
-    page_icon="T",
-    layout="wide",
-)
 st.divider()
 
 # Streamlit loop.
