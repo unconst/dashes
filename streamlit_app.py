@@ -13,4 +13,4 @@ block_metric = st.metric( label="Block", value=str(sub.get_current_block()) )
 for i in range(100):
     time.sleep(1)
     sub = bt.subtensor()
-    block_metric.write( "Block: {}".format( sub.get_current_block() ) )
+    block_metric.write( label="Block", value = "Block: {}".format( sub.get_current_block() ) )
