@@ -32,15 +32,21 @@ for i in range(100):
         # Stake
         st.divider()
         st.header('Stake')
+        st.metric( label="Max", value = history[-1].S.max().item(), delta = history[-1].S.max().item() - history[-2].S.max().item() )
+        st.metric( label="Mean", value = history[-1].S.mean().item(), delta = history[-1].S.mean().item() - history[-2].S.mean().item() )
+        st.metric( label="std", value = history[-1].S.std().item(), delta = history[-1].S.std().item() - history[-2].S.std().item() )
         rarr = history[-1].R.tolist()
         rfig, rax = plt.subplots()
         rax.hist( rarr, bins = 50 )
-        rax.set_title('Ranks')
+        rax.set_title('Stake')
         st.pyplot( rfig )
 
         # Ranks
         st.divider()
         st.header('Ranks')
+        st.metric( label="Max", value = history[-1].R.max().item(), delta = history[-1].R.max().item() - history[-2].R.max().item() )
+        st.metric( label="Mean", value = history[-1].R.mean().item(), delta = history[-1].R.mean().item() - history[-2].R.mean().item() )
+        st.metric( label="std", value = history[-1].R.std().item(), delta = history[-1].R.std().item() - history[-2].R.std().item() )
         rarr = history[-1].R.tolist()
         rfig, rax = plt.subplots()
         rax.hist( rarr, bins = 50 )
@@ -50,6 +56,9 @@ for i in range(100):
         # Trust
         st.divider()
         st.header('Trust')
+        st.metric( label="Max", value = history[-1].T.max().item(), delta = history[-1].T.max().item() - history[-2].T.max().item() )
+        st.metric( label="Mean", value = history[-1].T.mean().item(), delta = history[-1].T.mean().item() - history[-2].T.mean().item() )
+        st.metric( label="std", value = history[-1].T.std().item(), delta = history[-1].T.std().item() - history[-2].T.std().item() )
         tarr = history[-1].T.tolist()
         tfig, tax = plt.subplots()
         tax.hist( tarr, bins = 50 )
@@ -59,6 +68,9 @@ for i in range(100):
         # Consensus
         st.divider()
         st.header('Consensus')
+        st.metric( label="Max", value = history[-1].C.max().item(), delta = history[-1].C.max().item() - history[-2].C.max().item() )
+        st.metric( label="Mean", value = history[-1].C.mean().item(), delta = history[-1].C.mean().item() - history[-2].C.mean().item() )
+        st.metric( label="std", value = history[-1].C.std().item(), delta = history[-1].C.std().item() - history[-2].C.std().item() )
         carr = history[-1].C.tolist()
         cfig, cax = plt.subplots()
         cax.hist( carr, bins = 50 )
@@ -68,6 +80,9 @@ for i in range(100):
         # Incentives
         st.divider()
         st.header('Incentives')
+        st.metric( label="Max", value = history[-1].I.max().item(), delta = history[-1].I.max().item() - history[-2].I.max().item() )
+        st.metric( label="Mean", value = history[-1].I.mean().item(), delta = history[-1].I.mean().item() - history[-2].I.mean().item() )
+        st.metric( label="std", value = history[-1].I.std().item(), delta = history[-1].I.std().item() - history[-2].I.std().item() )
         iarr = history[-1].I.tolist()
         ifig, iax = plt.subplots()
         iax.hist( iarr, bins = 50 )
@@ -77,6 +92,9 @@ for i in range(100):
         # Dividends
         st.divider()
         st.header('Dividends')
+        st.metric( label="Max", value = history[-1].D.max().item(), delta = history[-1].D.max().item() - history[-2].D.max().item() )
+        st.metric( label="Mean", value = history[-1].D.mean().item(), delta = history[-1].D.mean().item() - history[-2].D.mean().item() )
+        st.metric( label="std", value = history[-1].D.std().item(), delta = history[-1].D.std().item() - history[-2].D.std().item() )
         darr = history[-1].D.tolist()
         dfig, dax = plt.subplots()
         dax.hist( darr, bins = 50 )
@@ -86,6 +104,9 @@ for i in range(100):
         # Emission
         st.divider()
         st.header('Emission')
+        st.metric( label="Max", value = history[-1].E.max().item(), delta = history[-1].E.max().item() - history[-2].E.max().item() )
+        st.metric( label="Mean", value = history[-1].E.mean().item(), delta = history[-1].E.mean().item() - history[-2].E.mean().item() )
+        st.metric( label="std", value = history[-1].E.std().item(), delta = history[-1].E.std().item() - history[-2].E.std().item() )
         earr = history[-1].E.tolist()
         efig, eax = plt.subplots()
         eax.hist( earr, bins = 50 )
