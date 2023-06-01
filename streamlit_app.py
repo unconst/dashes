@@ -15,17 +15,6 @@ placeholder = st.empty()
 metagraph = bt.metagraph( 1 )
 history = [ metagraph ]
 
-# def get_hotkey_diff( index ):
-#     len( set(a.hotkeys) - set(b.hotkeys) )
-
-# def get_dif_hotkeys_mavg( start, n, alpha ):
-#     start_meta = history[ start ]
-
-#     val = 1
-#     for index in range( index, index - 100, -1 ):
-#         val = val * ( 1 - alpha ) + alpha * len(set(history[index].hotkeys))
-#         return len( set(a.hotkeys) - set(b.hotkeys) )
-
 for i in range(100):
     with placeholder.container():
 
@@ -42,6 +31,12 @@ for i in range(100):
         col2.metric( label="UIDs", value = history[-1].n.item(), delta = history[-1].n.item() - history[0].n.item() )
         col3.metric( label="Unique Coldkeys", value = len(set(history[-1].coldkeys)), delta = len(set(history[-1].coldkeys)) - len(set(history[0].coldkeys)) ) 
         col4.metric( label="Unique Endpoints", value = len(set([a.ip for a in history[-1].axons])), delta = len(set([a.ip for a in history[-1].axons])) )
+
+        # Registrations
+        st.divider()
+        st.header('Registrations')
+        scol1.metric( label="Total", value = history[-1].S.max().item(), delta = history[-1].S.max().item() - history[0].S.max().item() )
+
 
         # Stake
         st.divider()
