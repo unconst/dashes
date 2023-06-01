@@ -15,6 +15,17 @@ placeholder = st.empty()
 metagraph = bt.metagraph( 1 )
 history = [ metagraph ]
 
+# def get_hotkey_diff( index ):
+#     len( set(a.hotkeys) - set(b.hotkeys) )
+
+# def get_dif_hotkeys_mavg( start, n, alpha ):
+#     start_meta = history[ start ]
+
+#     val = 1
+#     for index in range( index, index - 100, -1 ):
+#         val = val * ( 1 - alpha ) + alpha * len(set(history[index].hotkeys))
+#         return len( set(a.hotkeys) - set(b.hotkeys) )
+
 for i in range(100):
     with placeholder.container():
 
@@ -40,11 +51,11 @@ for i in range(100):
         col1.metric( label="Max", value = history[-1].S.max().item(), delta = history[-1].S.max().item() - history[0].S.max().item() )
         col2.metric( label="Mean", value = history[-1].S.mean().item(), delta = history[-1].S.mean().item() - history[0].S.mean().item() )
         col3.metric( label="std", value = history[-1].S.std().item(), delta = history[-1].S.std().item() - history[0].S.std().item() )
-        rarr = history[-1].R.tolist()
-        rfig, rax = plt.subplots()
-        rax.hist( rarr, bins = 50 )
-        rax.set_title('Stake')
-        st.pyplot( rfig )
+        sarr = history[-1].S.tolist()
+        sfig, sax = plt.subplots()
+        sax.hist( sarr, bins = 50 )
+        sax.set_title('Stake')
+        st.pyplot( sfig )
 
         # Ranks
         st.divider()
