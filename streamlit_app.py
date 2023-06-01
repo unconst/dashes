@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import queue
 
-st.title("Bittensor: Finney")
+st.title("Bittensor: Finney Subnet 1")
 st.divider()
 
 # Streamlit loop.
@@ -29,52 +29,70 @@ for i in range(100):
         block_metric = col4.metric( label="Unique Coldkeys", value = len(set(history[-1].coldkeys)), delta = len(set(history[-1].coldkeys)) - len(set(history[-2].coldkeys)) ) 
         block_metric = col1.metric( label="Unique Endpoints", value = len(set([a.ip for a in history[-1].axons])), delta = len(set([a.ip for a in history[-1].axons])) )
 
-        # Build table.
-        col1, col2 = st.columns( 2 )
-
-        # Ranks
+        # Stake
+        st.divider()
+        st.header('Stake')
         rarr = history[-1].R.tolist()
         rfig, rax = plt.subplots()
         rax.hist( rarr, bins = 50 )
         rax.set_title('Ranks')
-        col1.pyplot( rfig )
+        st.pyplot( rfig )
+
+        # Ranks
+        st.divider()
+        st.header('Ranks')
+        rarr = history[-1].R.tolist()
+        rfig, rax = plt.subplots()
+        rax.hist( rarr, bins = 50 )
+        rax.set_title('Ranks')
+        st.pyplot( rfig )
 
         # Trust
+        st.divider()
+        st.header('Trust')
         tarr = history[-1].T.tolist()
         tfig, tax = plt.subplots()
-        tax.hist( tarr, bins=20)
+        tax.hist( tarr, bins = 50 )
         tax.set_title('Trust')
-        col2.pyplot( tfig )
+        st.pyplot( tfig )
 
         # Consensus
+        st.divider()
+        st.header('Consensus')
         carr = history[-1].C.tolist()
         cfig, cax = plt.subplots()
-        cax.hist( carr, bins=20)
+        cax.hist( carr, bins = 50 )
         cax.set_title('Consensus')
-        col1.pyplot( cfig )
+        st.pyplot( cfig )
 
         # Incentives
+        st.divider()
+        st.header('Incentives')
         iarr = history[-1].I.tolist()
         ifig, iax = plt.subplots()
-        iax.hist( iarr, bins=20)
+        iax.hist( iarr, bins = 50 )
         iax.set_title('Incentives')
-        col2.pyplot( ifig )
+        st.pyplot( ifig )
 
         # Dividends
+        st.divider()
+        st.header('Dividends')
         darr = history[-1].D.tolist()
         dfig, dax = plt.subplots()
-        dax.hist( darr, bins=20)
+        dax.hist( darr, bins = 50 )
         dax.set_title('Dividends')
-        col1.pyplot( dfig )
+        st.pyplot( dfig )
 
         # Emission
+        st.divider()
+        st.header('Emission')
         earr = history[-1].E.tolist()
         efig, eax = plt.subplots()
-        eax.hist( earr, bins=20)
+        eax.hist( earr, bins = 50 )
         eax.set_title('Emission')
-        col2.pyplot( efig )
+        st.pyplot( efig )
 
-        time.sleep( 6 )
+        time.sleep( 12 )
         plt.close( fig = rfig )
         plt.close( fig = tfig )
         plt.close( fig = cfig )
