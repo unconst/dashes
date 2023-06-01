@@ -35,37 +35,43 @@ for i in range(100):
         # Ranks
         rarr = history[-1].R.tolist()
         rfig, rax = plt.subplots()
-        rax.hist( rarr, bins = 20 )
+        rax.hist( rarr, bins = 50 )
+        rax.set_title('Ranks')
         col1.pyplot( rfig )
 
         # Trust
         tarr = history[-1].T.tolist()
         tfig, tax = plt.subplots()
         tax.hist( tarr, bins=20)
+        tax.set_title('Trust')
         col2.pyplot( tfig )
 
         # Consensus
-        carr = history[-1].T.tolist()
+        carr = history[-1].C.tolist()
         cfig, cax = plt.subplots()
         cax.hist( carr, bins=20)
-        col2.pyplot( cfig )
+        cax.set_title('Consensus')
+        col1.pyplot( cfig )
 
         # Incentives
-        iarr = history[-1].T.tolist()
+        iarr = history[-1].I.tolist()
         ifig, iax = plt.subplots()
         iax.hist( iarr, bins=20)
+        iax.set_title('Incentives')
         col2.pyplot( ifig )
 
         # Dividends
-        darr = history[-1].T.tolist()
+        darr = history[-1].D.tolist()
         dfig, dax = plt.subplots()
         dax.hist( darr, bins=20)
-        col2.pyplot( dfig )
+        dax.set_title('Dividends')
+        col1.pyplot( dfig )
 
         # Emission
-        earr = history[-1].T.tolist()
+        earr = history[-1].E.tolist()
         efig, eax = plt.subplots()
         eax.hist( earr, bins=20)
+        eax.set_title('Emission')
         col2.pyplot( efig )
 
         time.sleep( 6 )
