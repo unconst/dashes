@@ -36,7 +36,7 @@ for i in range(100):
         # Stake
         st.divider()
         st.header('Stake')
-        col1, col2, col3 = st.columns(4)
+        col1, col2, col3 = st.columns(3)
         col1.metric( label="Max", value = history[-1].S.max().item(), delta = history[-1].S.max().item() - history[0].S.max().item() )
         col2.metric( label="Mean", value = history[-1].S.mean().item(), delta = history[-1].S.mean().item() - history[0].S.mean().item() )
         col3.metric( label="std", value = history[-1].S.std().item(), delta = history[-1].S.std().item() - history[0].S.std().item() )
@@ -49,7 +49,7 @@ for i in range(100):
         # Ranks
         st.divider()
         st.header('Ranks')
-        col1, col2, col3 = st.columns(4)
+        col1, col2, col3 = st.columns(3)
         col1.metric( label="Max", value = history[-1].R.max().item(), delta = history[-1].R.max().item() - history[0].R.max().item() )
         col2.metric( label="Mean", value = history[-1].R.mean().item(), delta = history[-1].R.mean().item() - history[0].R.mean().item() )
         col3.metric( label="std", value = history[-1].R.std().item(), delta = history[-1].R.std().item() - history[0].R.std().item() )
@@ -62,7 +62,7 @@ for i in range(100):
         # Trust
         st.divider()
         st.header('Trust')
-        col1, col2, col3 = st.columns(4)
+        col1, col2, col3 = st.columns(3)
         col1.metric( label="Max", value = history[-1].T.max().item(), delta = history[-1].T.max().item() - history[0].T.max().item() )
         col2.metric( label="Mean", value = history[-1].T.mean().item(), delta = history[-1].T.mean().item() - history[0].T.mean().item() )
         col3.metric( label="std", value = history[-1].T.std().item(), delta = history[-1].T.std().item() - history[0].T.std().item() )
@@ -75,7 +75,7 @@ for i in range(100):
         # Consensus
         st.divider()
         st.header('Consensus')
-        col1, col2, col3 = st.columns(4)
+        col1, col2, col3 = st.columns(3)
         col1.metric( label="Max", value = history[-1].C.max().item(), delta = history[-1].C.max().item() - history[0].C.max().item() )
         col2.metric( label="Mean", value = history[-1].C.mean().item(), delta = history[-1].C.mean().item() - history[0].C.mean().item() )
         col3.metric( label="std", value = history[-1].C.std().item(), delta = history[-1].C.std().item() - history[0].C.std().item() )
@@ -88,7 +88,7 @@ for i in range(100):
         # Incentives
         st.divider()
         st.header('Incentives')
-        col1, col2, col3 = st.columns(4)
+        col1, col2, col3 = st.columns(3)
         col1.metric( label="Max", value = history[-1].I.max().item(), delta = history[-1].I.max().item() - history[0].I.max().item() )
         col2.metric( label="Mean", value = history[-1].I.mean().item(), delta = history[-1].I.mean().item() - history[0].I.mean().item() )
         col3.metric( label="std", value = history[-1].I.std().item(), delta = history[-1].I.std().item() - history[0].I.std().item() )
@@ -101,7 +101,7 @@ for i in range(100):
         # Dividends
         st.divider()
         st.header('Dividends')
-        col1, col2, col3 = st.columns(4)
+        col1, col2, col3 = st.columns(3)
         col1.metric( label="Max", value = history[-1].D.max().item(), delta = history[-1].D.max().item() - history[0].D.max().item() )
         col2.metric( label="Mean", value = history[-1].D.mean().item(), delta = history[-1].D.mean().item() - history[0].D.mean().item() )
         col3.metric( label="std", value = history[-1].D.std().item(), delta = history[-1].D.std().item() - history[0].D.std().item() )
@@ -114,7 +114,7 @@ for i in range(100):
         # Emission
         st.divider()
         st.header('Emission')
-        col1, col2, col3 = st.columns(4)
+        col1, col2, col3 = st.columns(3)
         col1.metric( label="Max", value = history[-1].E.max().item(), delta = history[-1].E.max().item() - history[0].E.max().item() )
         col2.metric( label="Mean", value = history[-1].E.mean().item(), delta = history[-1].E.mean().item() - history[0].E.mean().item() )
         col3.metric( label="std", value = history[-1].E.std().item(), delta = history[-1].E.std().item() - history[0].E.std().item() )
