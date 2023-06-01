@@ -32,12 +32,6 @@ for i in range(100):
         col3.metric( label="Unique Coldkeys", value = len(set(history[-1].coldkeys)), delta = len(set(history[-1].coldkeys)) - len(set(history[0].coldkeys)) ) 
         col4.metric( label="Unique Endpoints", value = len(set([a.ip for a in history[-1].axons])), delta = len(set([a.ip for a in history[-1].axons])) )
 
-        # Registrations
-        st.divider()
-        st.header('Registrations')
-        scol1.metric( label="Total", value = history[-1].S.max().item(), delta = history[-1].S.max().item() - history[0].S.max().item() )
-
-
         # Stake
         st.divider()
         st.header('Stake')
