@@ -2,8 +2,6 @@ import time
 import streamlit as st
 import bittensor as bt
 import matplotlib.pyplot as plt
-import numpy as np
-import queue
 
 st.title("Bittensor: Finney Subnet 1")
 st.divider()
