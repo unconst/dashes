@@ -30,7 +30,7 @@ for i in range(100):
         block_metric = col1.metric( label="Unique Endpoints", value = len(set([a.ip for a in history[-1].axons])), delta = len(set([a.ip for a in history[-1].axons])) )
 
         # Build table.
-        arr = np.random.normal(1, 1, size=100)
+        arr = history[-1].R.tolist()
         fig, ax = plt.subplots()
         ax.hist(arr, bins=20)
         st.pyplot( fig )
