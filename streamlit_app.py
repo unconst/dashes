@@ -30,10 +30,48 @@ for i in range(100):
         block_metric = col1.metric( label="Unique Endpoints", value = len(set([a.ip for a in history[-1].axons])), delta = len(set([a.ip for a in history[-1].axons])) )
 
         # Build table.
-        arr = history[-1].R.tolist()
-        fig, ax = plt.subplots()
-        ax.hist(arr, bins=20)
-        st.pyplot( fig )
+        col1, col2 = st.columns( 2 )
+
+        # Ranks
+        rarr = history[-1].R.tolist()
+        rfig, rax = plt.subplots()
+        rax.hist( rarr, bins = 20 )
+        col1.pyplot( rfig )
+
+        # Trust
+        tarr = history[-1].T.tolist()
+        tfig, tax = plt.subplots()
+        tax.hist( tarr, bins=20)
+        col2.pyplot( tfig )
+
+        # Consensus
+        carr = history[-1].T.tolist()
+        cfig, cax = plt.subplots()
+        cax.hist( carr, bins=20)
+        col2.pyplot( cfig )
+
+        # Incentives
+        iarr = history[-1].T.tolist()
+        ifig, iax = plt.subplots()
+        iax.hist( iarr, bins=20)
+        col2.pyplot( ifig )
+
+        # Dividends
+        darr = history[-1].T.tolist()
+        dfig, dax = plt.subplots()
+        dax.hist( darr, bins=20)
+        col2.pyplot( dfig )
+
+        # Emission
+        earr = history[-1].T.tolist()
+        efig, eax = plt.subplots()
+        eax.hist( earr, bins=20)
+        col2.pyplot( efig )
 
         time.sleep( 6 )
-        plt.close( fig = fig )
+        plt.close( fig = rfig )
+        plt.close( fig = tfig )
+        plt.close( fig = cfig )
+        plt.close( fig = ifig )
+        plt.close( fig = dfig )
+        plt.close( fig = efig )
