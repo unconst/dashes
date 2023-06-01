@@ -5,7 +5,7 @@ import bittensor as bt
 st.title("Bittensor: Finney")
 st.set_page_config(
     page_title="Opentensor Dashboard",
-    page_icon="𝜏",
+    page_icon="T",
     layout="wide",
 )
 st.divider()
