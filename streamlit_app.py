@@ -36,3 +36,4 @@ for i in range(100):
         st.pyplot( fig )
 
         time.sleep( 6 )
+        fig.close()
