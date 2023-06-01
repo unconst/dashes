@@ -1,1 +1,1 @@
-bitensor @ git+https://github.com/opentensor/bittensor@main
+bitensor @ git+https://github.com/opentensor/bittensor@remove_nest_asyncio
