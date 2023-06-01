@@ -1,1 +1,1 @@
-bittensor
+bitensor @ git+https://github.com/opentensor/bittensor@main
